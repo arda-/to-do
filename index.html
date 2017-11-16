@@ -1,9 +1,43 @@
 <!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <html>
 <head>
 	<title></title>
 </head>
 <body>
-
+	<div id="app">
+		<ul>
+			<li v-for="todo in todos">
+				{{todo.text}}
+				—
+				{{todo.category}}
+				—
+				{{todo.urgent}}
+				—
+				{{todo.important}}
+				—
+				{{todo.complete}}
+			</li>
+		</ul>
+	</div>
 </body>
+<script src="https://unpkg.com/vue"></script>
+
+<script type="text/javascript" charset="utf-8">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			todos: [
+			{ 
+				'text': 'ex. 5,6,3,7',
+				'category': 'math',
+				'urgent': false,
+				'important': false,
+				'complete': false, 
+			}
+			]
+		}
+	})
+</script>
+
 </html>
