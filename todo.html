@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/> -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1;"/>
+	<style media="screen">
+
+
+
+	body {
+		font-weight: 400;
+		font-family: sans-serif
+		background-color: lightgray;
+		font-size: 1.1rem;
+		width: 100vw;
+	}
+
+	main {
+		margin: 0 .5rem;
+		display: grid;
+	}
+
+
+	div {
+		display: inline-block;
+	}
+
+	@media only screen and (min-width: 30rem) {
+		main {
+			margin: 0 1rem;
+		}
+
+		.todo-text {
+			/*width: 50%;*/
+		}
+
+		.urgent-u .important-i {
+			/*width: 13%;*/
+		}
+	}
+
+
+	.grow {
+		transition: all .1s ease-in-out;
+	}
+
+	.grow:hover {
+		transform: scale(1.1);
+	}
+
+
+	.todo {
+		vertical-align: middle;
+		padding: .25em 0;
+		border-top: 1px solid lightgray;
+		width: 100vw;
+	}
+
+	input[type=checkbox] {
+		margin: 0 1rem;
+	}
+
+	.todo-text {
+	}
+
+
+	.urgent-u .important-i {
+		width: 20%;
+	}
+
+	.sort-by-button {
+		padding: .5rem;
+		font-size: 1rem;
+		background-color: #bbb;
+		color: white;
+		border: none;
+		border-radius: .3rem;
+		font-weight: 600;
+		margin: 0;
+	}
+	.sort-by-button:hover { background-color: #444; }
+	.sort-by-button-selected { background-color: #444;}
+	.sort-by-button-selected:hover { background-color: #bbb;}
+
+
+	/* for the urgent U */
+
+
+	.urgent-u {
+		font-size: 1.5em;
+		text-align: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: .3rem;
+		vertical-align: middle;
+		background-color: #bbb;
+		color: #fff;
+		font-weight: 800;
+	}
+	.urgent-u:hover {
+		background-color: #444;
+	}
+
+	.urgent-u-active {
+		background-color: #444;
+	}
+	.urgent-u-active:hover {
+		background-color: #bbb;
+	}
+
+	/* for the important I */
+	.important-i {
+		font-size: 1.5em;
+		width: 2rem;
+		height: 2rem;
+		text-align: center;
+		border-radius: .3rem;
+		vertical-align: middle;
+		background-color: pink;
+		color: #fff;
+		font-weight: 800;
+	}
+	.important-i:hover {
+		background-color: red;
+	}
+
+	.important-i-active {
+		background-color: red;
+	}
+	.important-i-active:hover {
+		background-color: pink;
+	}
+
+	.pointer {
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+
+	.pointer:hover { cursor: pointer; }
+
+	.sans-serif {
+		font-family: -apple-system, BlinkMacSystemFont,
+		'avenir next', avenir,
+		'helvetica neue', helvetica,
+		ubuntu,
+		roboto, noto,
+		'segoe ui', arial,
+		sans-serif;
+	}
+
+</style>
+</head>
+<body class="bg-light-silver">
+	<main class=" mw7 bg-white-90 shadow-2 pa4-ns ma0 center sans-serif">
+		<h1 class="ma0">todo.ui</h1>
+		<div style="padding: 0 0 1rem 0;">
+			<h4 style="padding: 0; margin: 0;">SORT BY:</h4>
+			<div id="switch-container">
+				<button class="sort-by-button sort-by-button-selected pointer grow">urgency</button>
+				<button class="sort-by-button pointer grow">importance</button>
+			</div>
+		</div>
+
+		<div id="todo-list">
+			<div class="todo">
+				<input type="checkbox" class="donebox" name="">
+				<div class="todo-text">Algebra Hw, problems 1, 2, 3, 12, 13, 15, 22, 46, 58</div>
+				<div class="pointer grow urgent-u urgent-u-active">U</div>
+				<div class="pointer grow important-i important-i-active">I</div>
+			</div>
+
+			<div class="todo">
+				<input type="checkbox" class="donebox" name="">
+				<div class="todo-text">Call accountant about NPR donation as deductible</div>
+				<div class="pointer grow urgent-u urgent-u-active">U</div>
+				<div class="pointer grow important-i">I</div>
+			</div>
+
+			<div class="todo">
+				<input type="checkbox" class="donebox" name="">
+				<div class="todo-text">Pride and Prejudice Essay</div>
+				<div class="pointer grow urgent-u" title="meow">U</div>
+				<div class="pointer grow important-i important-i-active">I</div>
+			</div>			
+
+			<div class="todo">
+				<input type="checkbox" class="donebox" name="">
+				<div class="todo-text">email logan about latest progress</div>
+				<div class="pointer grow urgent-u">U</div>
+				<div class="pointer grow important-i">I</div>
+			</div>
+		</div>
+
+
+
+
+	</main>
+
+
+</body>
+</html>
